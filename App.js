@@ -22,7 +22,11 @@ return state
 }
 const store=createStore(rootReducer)
 
-//console.log(store.getState());
+store.subscribe(()=>{
+    console.log('subscribe',store.getState())
+})
+
+
 
 store.dispatch({
     type: 'INCREMENT' 
@@ -36,4 +40,3 @@ store.dispatch({
 
 })
 
-console.log(store.getState())
