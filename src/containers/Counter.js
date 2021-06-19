@@ -1,7 +1,7 @@
 import React from 'react'
 
-import CounterControl from '../../components/CounterControl/CounterControl'
-import CounterOutput from '../../components/CounterOutput/CounterOutput'
+import CounterControl from '../components/CounterControl/CounterControl'
+import CounterOutput from '../components/CounterOutput/CounterOutput'
 
 class Counter extends React.Component {
   state = {
@@ -46,11 +46,11 @@ class Counter extends React.Component {
           clicked={() => this.counterChangedHandler('dec')}
         />
         <CounterControl
-          label="Incerement 2 ۲"
+          label="Increment 2 "
           clicked={() => this.counterChangedHandler('add', 2)}
         />
         <CounterControl
-          label="Decrement 2 ۲"
+          label="Decrement 2 "
           clicked={() => this.counterChangedHandler('sub', 2)}
         />
       </div>
