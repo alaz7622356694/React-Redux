@@ -38,19 +38,19 @@ class Counter extends React.Component {
       <div>
         <CounterOutput value={this.state.counter} />
         <CounterControl
-          label="افزایش"
+          label="Increment"
           clicked={() => this.counterChangedHandler('inc')}
         />
         <CounterControl
-          label="کاهش"
+          label="Decrement"
           clicked={() => this.counterChangedHandler('dec')}
         />
         <CounterControl
-          label="افزودن ۲"
+          label="Incerement 2 ۲"
           clicked={() => this.counterChangedHandler('add', 2)}
         />
         <CounterControl
-          label="کاهش ۲"
+          label="Decrement 2 ۲"
           clicked={() => this.counterChangedHandler('sub', 2)}
         />
       </div>
