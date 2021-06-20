@@ -40,8 +40,8 @@ const mapDispatchToProps=(dispatch)=>{
 return {
   onIncrement:()=> dispatch({type:'INCREMENT'}),
   onDecrement:()=> dispatch({type:'DECREMENT'}),
-  onIncrement2:()=> dispatch({type:'INCREMENT2'}),
-  onDecrement2:()=> dispatch({type:'DECREMENT2'})
+  onIncrement2:()=> dispatch({type:'INCREMENT2' , value:2}),
+  onDecrement2:()=> dispatch({type:'DECREMENT2' , value:2})
 }
 }
 

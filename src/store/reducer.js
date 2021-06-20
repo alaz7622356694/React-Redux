@@ -8,26 +8,19 @@ const reducer =(state=initialState , action)=>{
         case 'INCREMENT':
             return { counter: state.counter + 1 }
           break
-
           case 'DECREMENT':
             return { counter: state.counter - 1 }
           break
 
           case 'INCREMENT2':
-            return { counter: state.counter + 2 }
+            return { counter: state.counter + action.value }
           break
 
           case 'DECREMENT2':
-            return { counter: state.counter - 2 }
+            return { counter: state.counter - action.value }
           break
   
       }
-    //  if(action.type ==='INCREMENT'){
-//      return { counter:state.counter+1}
-//  }
-
-
-
     return state
 
 }
