@@ -4,34 +4,6 @@ import CounterControl from '../components/CounterControl/CounterControl'
 import CounterOutput from '../components/CounterOutput/CounterOutput'
 
 class Counter extends React.Component {
-  state = {
-    counter: 0,
-  }
-
-  counterChangedHandler = (action, value) => {
-    switch (action) {
-      case 'inc':
-        this.setState((prevState) => {
-          return { counter: prevState.counter + 1 }
-        })
-        break
-      case 'dec':
-        this.setState((prevState) => {
-          return { counter: prevState.counter - 1 }
-        })
-        break
-      case 'add':
-        this.setState((prevState) => {
-          return { counter: prevState.counter + value }
-        })
-        break
-      case 'sub':
-        this.setState((prevState) => {
-          return { counter: prevState.counter - value }
-        })
-        break
-    }
-  }
 
   render() {
     return (
@@ -43,15 +15,15 @@ class Counter extends React.Component {
         />
         <CounterControl
           label="Decrement"
-          clicked={() => this.counterChangedHandler('dec')}
+          clicked={this.props.onDecrement}
         />
         <CounterControl
-          label="Increment 2 "
-          clicked={() => this.counterChangedHandler('add', 2)}
+          label="Increment2"
+          clicked={this.props.onIncrement2}
         />
         <CounterControl
-          label="Decrement 2 "
-          clicked={() => this.counterChangedHandler('sub', 2)}
+          label="Decrement2"
+          clicked={this.props.onDecrement2}
         />
       </div>
     )
@@ -66,7 +38,10 @@ return {
 
 const mapDispatchToProps=(dispatch)=>{
 return {
-  onIncrement:()=> dispatch({type:'INCREMENT'})
+  onIncrement:()=> dispatch({type:'INCREMENT'}),
+  onDecrement:()=> dispatch({type:'DECREMENT'}),
+  onIncrement2:()=> dispatch({type:'INCREMENT2'}),
+  onDecrement2:()=> dispatch({type:'DECREMENT2'})
 }
 }
 
