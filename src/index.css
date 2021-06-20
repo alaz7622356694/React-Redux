@@ -4,3 +4,11 @@ body {
     direction: rtl;
   }
   
+  button{
+    background: rgb(87, 109, 255);
+    border: none;
+    padding : 0.6rem 1rem;
+    outline: none;
+    border-radius: 3px;
+    color: rgb(255, 255, 255);
+  }

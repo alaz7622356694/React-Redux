@@ -25,6 +25,21 @@ class Counter extends React.Component {
           label="Decrement2"
           clicked={this.props.onDecrement2}
         />
+        <div>
+
+<button  onClick={this.props.showingResult}> Showing store result</button>
+
+{this.props.storeResult.map((item)=>{
+
+
+  return <p key={item}>{item}</p>
+
+
+})}
+
+        </div>
+
+
       </div>
     )
   }
@@ -32,7 +47,9 @@ class Counter extends React.Component {
 
 const mapStateToProps=(state)=>{
 return {
-  ctr:state.counter
+  ctr:state.counter,
+  storeResult:state.result
+
 }
 }
 
@@ -41,8 +58,8 @@ return {
   onIncrement:()=> dispatch({type:'INCREMENT'}),
   onDecrement:()=> dispatch({type:'DECREMENT'}),
   onIncrement2:()=> dispatch({type:'INCREMENT2' , value:2}),
-  onDecrement2:()=> dispatch({type:'DECREMENT2' , value:2})
+  onDecrement2:()=> dispatch({type:'DECREMENT2' , value:2}),
+  showingResult:()=> dispatch({type:'RESULT'})
 }
 }
-
 export default connect(mapStateToProps , mapDispatchToProps)(Counter)
